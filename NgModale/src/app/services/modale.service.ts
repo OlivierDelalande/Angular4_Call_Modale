@@ -11,8 +11,10 @@ interface ModalContent  {
 
 @Injectable()
 export class ModaleService {
+
   modalObs$: BehaviorSubject<ModalContent>;
   modalContent: ModalContent;
+
   constructor() {
     this.modalObs$ = new BehaviorSubject(null)
   }
@@ -21,13 +23,13 @@ export class ModaleService {
     this.modalContent = {
       component: component,
       string: string
-    }
+    };
 
     this.modalObs$.next(this.modalContent);
   }
 
   getModal() {
     return this.modalObs$;
-  }
+  };
 
 }

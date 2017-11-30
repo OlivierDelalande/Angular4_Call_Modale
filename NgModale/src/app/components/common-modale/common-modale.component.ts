@@ -2,19 +2,17 @@ import {
   AfterViewInit,
   Component,
   ComponentFactoryResolver,
-  OnDestroy,
-  OnInit,
   ViewChild,
 } from '@angular/core';
-import {ModaleDirective} from '../Directives/modal.directive';
-import {ModaleService} from '../services/modale.service';
+import {ModaleDirective} from '../../directives/modal.directive';
+import {ModaleService} from '../../services/modale.service';
 
 @Component({
   selector: 'app-common-modale',
   templateUrl: './common-modale.component.html',
   styleUrls: ['./common-modale.component.css'],
 })
-export class CommonModaleComponent implements AfterViewInit, OnDestroy {
+export class CommonModaleComponent implements AfterViewInit {
 
   @ViewChild(ModaleDirective) modale: ModaleDirective;
 
@@ -45,10 +43,6 @@ export class CommonModaleComponent implements AfterViewInit, OnDestroy {
         this.loadComponent();
       }
     });
-  }
-
-  ngOnDestroy() {
-    // this.loadComponent();
   }
 
 }

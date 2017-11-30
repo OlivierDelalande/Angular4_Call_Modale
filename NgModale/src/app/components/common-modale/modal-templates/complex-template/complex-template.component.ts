@@ -1,14 +1,8 @@
 import {
-  AfterViewInit,
   Component,
-  ComponentFactoryResolver,
-  Input,
-  OnDestroy,
-  OnInit,
-  ViewChild,
+  Input
 } from '@angular/core';
-import {ModaleDirective} from '../../Directives/modal.directive';
-import {ModaleService} from '../../services/modale.service';
+
 
 @Component({
   selector: 'app-complex-template',
@@ -19,5 +13,13 @@ import {ModaleService} from '../../services/modale.service';
 export class ModaleCtrl {
 
   @Input() data;
+
+  yes() {
+    console.log('yes');
+  }
+
+  no() {
+    console.log('no');
+  }
 
 }

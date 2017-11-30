@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CommonModaleComponent} from './common-modale.component';
-import {ModaleDirective} from '../Directives/modal.directive';
+import {ModaleDirective} from '../../directives/modal.directive';
 
 @NgModule({
   imports: [
