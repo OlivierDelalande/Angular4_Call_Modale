@@ -15,11 +15,11 @@ import {ModaleService} from '../../services/modale.service';
 export class CommonModaleComponent implements AfterViewInit {
 
   @ViewChild(ModaleDirective) modale: ModaleDirective;
+  modalConfig: any;
+  viewContainerRef: any;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private modaleService: ModaleService) {
   }
-
-  modalConfig: any;
 
   ngAfterViewInit() {
     this.getAds();
@@ -29,10 +29,10 @@ export class CommonModaleComponent implements AfterViewInit {
 
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.modalConfig.component);
 
-    let viewContainerRef = this.modale.viewContainerRef;
-    viewContainerRef.clear();
+    this.viewContainerRef = this.modale.viewContainerRef;
+    this.viewContainerRef.clear();
 
-    let componentRef = viewContainerRef.createComponent(componentFactory);
+    let componentRef = this.viewContainerRef.createComponent(componentFactory);
     (componentRef.instance)['data'] = this.modalConfig.string;
   }
 
@@ -42,7 +42,9 @@ export class CommonModaleComponent implements AfterViewInit {
       if (modalConfig) {
         this.loadComponent();
       }
+      if(this.viewContainerRef && !modalConfig){
+        this.viewContainerRef.clear();
+      }
     });
   }
-
 }

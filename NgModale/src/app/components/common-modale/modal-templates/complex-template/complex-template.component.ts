@@ -1,7 +1,8 @@
 import {
   Component,
-  Input
+  Input,
 } from '@angular/core';
+import {ModaleService} from '../../../../services/modale.service';
 
 
 @Component({
@@ -14,12 +15,16 @@ export class ModaleCtrl {
 
   @Input() data;
 
+  constructor(private ModaleService: ModaleService) {
+  }
+
   yes() {
     console.log('yes');
   }
 
   no() {
     console.log('no');
+    this.ModaleService.closeModale();
   }
 
 }

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import {ModaleModule} from './components/common-modale/common-modale.module';
 import {ModaleService} from './services/modale.service';
 import {ModaleCtrl} from './components/common-modale/modal-templates/complex-template/complex-template.component';
-import {ModaleDirective} from './directives/modal.directive';
 
 @NgModule({
   declarations: [

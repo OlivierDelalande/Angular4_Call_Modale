@@ -32,4 +32,13 @@ export class ModaleService {
     return this.modalObs$;
   };
 
+  closeModale() {
+    console.log('no service');
+    this.modalContent = {
+      component: null,
+      string: null
+    };
+    this.modalObs$.next(null);
+  }
+
 }
