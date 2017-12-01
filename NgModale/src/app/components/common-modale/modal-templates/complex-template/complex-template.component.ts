@@ -13,9 +13,11 @@ import {ModaleService} from '../../../../services/modale.service';
 
 export class ModaleCtrl {
 
-  @Input() data;
+  @Input() texte;
+  @Input() color;
 
-  constructor(private ModaleService: ModaleService) {
+  constructor(private ModaleService: ModaleService,
+              ) {
   }
 
   yes() {

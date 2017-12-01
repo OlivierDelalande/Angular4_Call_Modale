@@ -1,6 +1,6 @@
-div.modale-container
+div([style.background-color]='color').modale-container
   div
-    p {{ data }}
+    p {{ texte }}
   div.conainer-buttons
     button(type='button', (click)='yes()').yes yes
     button(type='button', (click)='no()').no no

@@ -33,7 +33,8 @@ export class CommonModaleComponent implements AfterViewInit {
     this.viewContainerRef.clear();
 
     let componentRef = this.viewContainerRef.createComponent(componentFactory);
-    (componentRef.instance)['data'] = this.modalConfig.string;
+    (componentRef.instance)['texte'] = this.modalConfig.texte;
+    (componentRef.instance)['color'] = this.modalConfig.color;
   }
 
   getAds() {

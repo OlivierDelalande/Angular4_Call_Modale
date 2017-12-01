@@ -6,7 +6,8 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 interface ModalContent  {
   component: Type<any>,
-  string: string
+  texte: string,
+  color: string
 }
 
 @Injectable()
@@ -16,13 +17,14 @@ export class ModaleService {
   modalContent: ModalContent;
 
   constructor() {
-    this.modalObs$ = new BehaviorSubject(null)
+    this.modalObs$ = new BehaviorSubject(null);
   }
 
-  init(component, string) {
+  init(component, string, color) {
     this.modalContent = {
       component: component,
-      string: string
+      texte: string,
+      color: color
     };
 
     this.modalObs$.next(this.modalContent);
@@ -33,10 +35,10 @@ export class ModaleService {
   };
 
   closeModale() {
-    console.log('no service');
     this.modalContent = {
       component: null,
-      string: null
+      texte: null,
+      color: null
     };
     this.modalObs$.next(null);
   }
